@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>JAVASCRIPT</title>
+</head>
+
+<body>
+    <script>
+        // ЗАДАНИЯ ДЛЯ РАЗМИНКИ!!!!!!)))
+
+        
+        //1) Создать класс функция конструктор которого принимает два параметра position, salary, 
+        // также создать одно private поле positions = ['software developer', 'hr manager', 'project manager'], getter(get функция)!
+        // которая смотрит на поле positions, и если в position есть одно из перечисленных то возвращает true иначе false
+
+        class Position {
+            #position = ['software developer', 'hr manager', 'project manager'];
+            constructor(position, salary) {
+                this.position = position;
+                this.salary = salary;
+            }
+
+            get getPosition() {
+                let res = this.#position.includes(this.position);
+                return res;
+            }
+        }
+
+        let result = new Position('software developer', '5000');
+
+        result.getPosition;
+    
+
+        //2) Есть класс App! Добавить две функции одна из них устанавливает product(создает поле product обьект с полем name, price), вторая функция получает price 
+        // и одно статическое свойство yearOfIssue
+        class App {
+            static yearOfIssue = 234;
+
+            set Product(product) {
+                this.product = product;
+            }
+
+            get getPrice() {
+                return this.product.price;
+            }
+        }
+
+        const app = new App();
+
+        app.Product = {name: 'vasia', price: 234};
+
+        app.getPrice;
+       
+        // 3) Пишем свой split и join))!
+        function Split(array, sep) {
+            let arrEl = [];
+            let j = 0;
+            for (let i = 0; i < array.length; i++) {
+                if(array[i] === sep) {
+                    j++;
+                }else {
+                    arrEl[j] ? arrEl[j] += array[i] : arrEl[j] = array[i];
+                }
+            }
+            return arrEl;
+        }
+        let split = Split('Welcome To Devacademy', " ");
+
+
+        const arr = [1, 2, 3, 4];
+        function join(arr, el) {
+            let str = '';
+            for (let i = 0; i<arr.length; i++) {
+                str = i !== arr.length-1 ? str + arr[i] + el : str + arr[i];
+            }
+            return str;
+        }
+
+        let Join = join(arr, ',');
+        Join;
+
+        // 4) Ну и на последок перепишем класс в вид самовыз функция которая возвращает функцию-конструктор
+        class NewApp {
+            constructor(object) {
+                this.object = object;
+            }
+            getObject() {
+                return object;
+            }
+        }
+
+        (function () {
+            return function getObject(object) {
+                this.object = object;
+            };
+        }());
+
+    </script>
+</body>
+
+</html>
